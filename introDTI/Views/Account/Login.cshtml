@@ -8,97 +8,136 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng nhập - DTI System</title>
+    <title>@ViewData["Title"] - DTI System</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="~/css/login.css" rel="stylesheet" />
 </head>
 <body>
 
-    <div class="glass-container">
+    <div class="container-fluid g-0">
+        <div class="row g-0 h-100">
 
-        <div class="brand-side">
-            <div class="mb-4">
-                <img src="/img/STTECH.png" height="50" alt="Logo" class="mb-3">
-                <h3 class="fw-bold text-dark">STTECH DTI</h3>
-                <p class="text-muted small">Hệ thống Đánh giá Chuyển đổi số Giáo dục</p>
-            </div>
+            <div class="col-lg-7 login-brand-col">
+                <div class="brand-bg-pattern"></div>
 
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" class="earth-bg" alt="Earth">
 
-            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/business-analytics-5366665-4486234.png"
-                 class="illustration-img"
-                 alt="Illustration">
-
-            <div class="mt-4">
-                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill">
-                    <i class="fas fa-shield-alt me-1"></i> Bảo mật cao
-                </span>
-            </div>
-        </div>
-
-        <div class="form-side">
-            <div class="mb-4 text-center text-md-start">
-                <h2 class="fw-bold text-dark mb-1">Xin chào! 👋</h2>
-                <p class="text-muted">Đăng nhập để quản lý hồ sơ DTI</p>
-            </div>
-
-            <form action="/Account/Login" method="post">
-
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                    <label for="floatingInput"><i class="fas fa-user me-2"></i>Tài khoản / Email</label>
-                </div>
-
-                <div class="form-floating mb-3 position-relative">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                    <label for="floatingPassword"><i class="fas fa-lock me-2"></i>Mật khẩu</label>
-                    <span class="position-absolute top-50 end-0 translate-middle-y me-3 text-muted" onclick="togglePassword()" style="cursor: pointer;">
-                        <i class="fas fa-eye" id="toggleIcon"></i>
-                    </span>
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                        <label class="form-check-label text-muted small" for="flexCheckDefault">Ghi nhớ</label>
+                <div class="d-flex align-items-center">
+                    <div class="bg-white rounded-3 p-2 me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <img src="/img/STTECH.png" alt="Logo" class="img-fluid">
                     </div>
-                    <a href="#" class="text-decoration-none small fw-bold text-primary">Quên mật khẩu?</a>
+                    <div>
+                        <h5 class="mb-0 fw-bold text-white">STTECH DTI</h5>
+                        <small class="text-white-50" style="font-size: 0.75rem;">Platform for Education</small>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn btn-login-main w-100">Đăng nhập</button>
+                <div class="brand-content ps-2">
+                    <h1>Dữ liệu số hóa<br>Quản trị thông minh</h1>
+                    <p class="lead text-white-50 mb-5" style="max-width: 550px;">
+                        Hệ thống đánh giá mức độ chuyển đổi số ngành Giáo dục, hỗ trợ ra quyết định dựa trên dữ liệu thời gian thực.
+                    </p>
 
-                <div class="text-center my-3 text-muted small">hoặc tiếp tục với</div>
+                    <div class="d-flex gap-4">
+                        <div class="d-flex align-items-center text-white-50">
+                            <i class="fas fa-shield-alt me-2 text-warning"></i> Bảo mật cấp độ 3
+                        </div>
+                        <div class="d-flex align-items-center text-white-50">
+                            <i class="fas fa-bolt me-2 text-warning"></i> Xử lý tốc độ cao
+                        </div>
+                    </div>
+                </div>
 
-                <div class="row g-2">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-outline-secondary w-100 fw-bold border-0 bg-light text-dark">
+                <div class="d-flex justify-content-between text-white-50 small">
+                    <span>© 2025 ST Technology.</span>
+                    <span><a href="#" class="text-white-50 text-decoration-none">Điều khoản</a> &bull; <a href="#" class="text-white-50 text-decoration-none">Bảo mật</a></span>
+                </div>
+            </div>
 
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" height="18" class="me-2">
-                            Google
+            <div class="col-lg-5 login-form-col">
+                <div class="login-card">
+                    <div class="text-center mb-4 d-lg-none">
+                        <img src="/img/STTECH.png" alt="Logo" height="60">
+                    </div>
+
+                    <div class="mb-5">
+                        <h2 class="fw-bold text-dark">Đăng nhập</h2>
+                        <p class="text-muted">Chào mừng quay trở lại hệ thống DTI</p>
+                    </div>
+
+                    <form action="/Account/Login" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Tài khoản</label>
+                            <div class="custom-input-group">
+                                <input type="text" class="form-control form-control-lg" placeholder="Email hoặc Tên đăng nhập" required>
+                                <i class="fas fa-envelope input-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Mật khẩu</label>
+                            <div class="custom-input-group">
+                                <input type="password" class="form-control form-control-lg" id="passwordInput" placeholder="Nhập mật khẩu" required>
+                                <i class="fas fa-lock input-icon"></i>
+                                <button type="button" class="btn border-0 position-absolute end-0 top-50 translate-middle-y text-muted pe-3" onclick="togglePassword()" style="z-index: 20;">
+                                    <i class="fas fa-eye" id="toggleIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                                <label class="form-check-label text-muted small" for="rememberMe">Ghi nhớ 30 ngày</label>
+                            </div>
+                            <a href="#" class="small fw-bold text-primary text-decoration-none">Quên mật khẩu?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary-gradient">
+                            Đăng nhập hệ thống
                         </button>
-                    </div>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-outline-secondary w-100 fw-bold border-0 bg-light text-dark">
+                    </form>
 
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Logo_VNeID.png" height="22" class="me-2" alt="VNeID Logo">
-                            VNeID
-                        </button>
+                    <div class="divider"><span>hoặc tiếp tục với</span></div>
+
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <button class="btn btn-sso">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" height="20" class="me-2" alt="Google">
+                                Google
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-sso">
+                                <img src="https://vneid.gov.vn/assets/img/logo.png" height="20" class="me-2" alt="VNeID">
+                                VNeID
+                            </button>
+                        </div>
                     </div>
-                </div><!---->
-            </form>
+
+                    <div class="text-center mt-5">
+                        <p class="text-muted small mb-0">
+                            Bạn chưa có tài khoản? <a href="#" class="fw-bold text-primary text-decoration-none">Liên hệ Quản trị viên</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
         function togglePassword() {
-            const x = document.getElementById("floatingPassword");
-            const icon = document.getElementById("toggleIcon");
-            if (x.type === "password") {
-                x.type = "text";
+            const input = document.getElementById('passwordInput');
+            const icon = document.getElementById('toggleIcon');
+
+            if (input.type === "password") {
+                input.type = "text";
                 icon.classList.remove("fa-eye");
                 icon.classList.add("fa-eye-slash");
             } else {
-                x.type = "password";
+                input.type = "password";
                 icon.classList.remove("fa-eye-slash");
                 icon.classList.add("fa-eye");
             }
