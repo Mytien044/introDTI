@@ -1,2 +1,7 @@
-introDTI/
+# Bỏ qua các thư mục rác của Visual Studio
 .vs/
+bin/
+obj/
+
+# Bỏ qua file user
+*.user

@@ -1,0 +1,462 @@
+﻿@{
+    ViewData["Title"] = "Cổng thông tin Đánh giá Chuyển đổi số";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DTI System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="~/css/landing.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                
+                <span class="brand-text">DTI STTECH</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gioi-thieu">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#van-ban">Quy định</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#huong-dan">Hướng dẫn</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="/Account/Login" class="btn btn-login">
+                            <i class="fas fa-user-circle me-2"></i> Đăng nhập
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-10 text-center" data-aos="fade-up">
+
+                    <div class="d-inline-block mb-3">
+                        <div class="hero-badge">
+                            <i class="fas fa-check-circle text-warning me-2"></i>Ủy ban Nhân dân tỉnh An Giang
+                        </div>
+                    </div>
+
+                    <h1 class="display-4 mb-4 fw-bold">PHẦN MỀM ĐÁNH GIÁ<br>CHUYỂN ĐỔI SỐ NGÀNH GIÁO DỤC</h1>
+
+                    <p class="lead mb-5 opacity-90 mx-auto" style="max-width: 700px; line-height: 1.8; font-weight: 300;">
+                        Nền tảng số hóa quy trình đánh giá DTI đồng bộ, liên thông dữ liệu từ <br>
+                        <strong>Sở GD&ĐT - Phòng VH & XH - Trường học</strong> theo QĐ 4725/BGDĐT.
+                    </p>
+
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a href="#quy-trinh" class="btn btn-light btn-lg text-primary fw-bold shadow px-4 py-3" style="border-radius: 12px;">
+                            Xem quy trình
+                        </a>
+                        <a href="#vai-tro" class="btn btn-outline-light btn-lg px-4 py-3" style="border-radius: 12px; border-width: 2px;">
+                            Lợi ích sử dụng
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="van-ban" class="py-5" style="margin-top: 0px; position: relative; z-index: 10;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="legal-card card-blue">
+                        <div class="icon-circle text-primary bg-primary-subtle">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4 class="mb-2">Cấp Sở GD&ĐT</h4>
+                        <p class="text-muted small fst-italic mb-3">Theo QĐ 4725 & Bộ chỉ số Tỉnh</p>
+                        <p class="text-dark mb-3 small">
+                            Đánh giá mức độ chuyển đổi số của cơ quan Sở, tích hợp kết quả toàn tỉnh để báo cáo UBND Tỉnh và Bộ GD&ĐT.
+                        </p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li class="mb-1"><i class="fas fa-check text-primary me-2"></i>Hạ tầng & Dữ liệu số</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Điều hành thông minh (IOC)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="legal-card card-gold" style="border-top-color: var(--accent-gold);">
+                        <div class="icon-circle text-warning bg-warning-subtle">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h4 class="mb-2 text-dark">Cấp Phòng VH - XH</h4>
+                        <p class="text-muted small fst-italic mb-3">Quản lý địa bàn Quận/Huyện</p>
+                        <p class="text-dark mb-3 small">
+                            Bộ tiêu chí dành cho Phòng GD&ĐT đánh giá công tác chỉ đạo, quản lý và triển khai CĐS tại các trường trực thuộc.
+                        </p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li class="mb-1"><i class="fas fa-check text-warning me-2"></i>Quản lý hồ sơ điện tử</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>CQQL Tổ chức kiểm tra, đánh giá</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="legal-card card-green" style="transform: scale(1.05); box-shadow: 0 20px 50px rgba(0,0,0,0.15);">
+                        <div class="icon-circle text-success bg-success-subtle">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h4 class="mb-2">Cấp Trường học</h4>
+                        <p class="text-muted small fst-italic mb-3">Mầm non, Phổ thông, GDTX</p>
+                        <p class="text-dark mb-3 small">
+                            Đánh giá chi tiết mức độ đáp ứng theo 2 trụ cột chính của <strong>QĐ 4725/QĐ-BGDĐT</strong>.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 mt-3">
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success">CĐS Quản trị</span>
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success">CĐS Dạy học</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="quy-trinh" class="py-5 bg-white">
+        <div class="container py-4">
+
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h6 class="text-primary fw-bold text-uppercase ls-2">Quy trình chuẩn hóa</h6>
+                <h2 class="fw-bold text-dark">QUY TRÌNH ĐÁNH GIÁ DTI</h2>
+                <div class="section-title-bar"></div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+                        <div class="process-icon"><i class="fas fa-edit"></i></div>
+                        <h5 class="fw-bold">Tự đánh giá</h5>
+                        <p class="small text-muted mb-0">Nhà trường rà soát, tự chấm điểm và đính kèm minh chứng số lên hệ thống.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+                        <div class="process-icon"><i class="fas fa-search-plus"></i></div>
+                        <h5 class="fw-bold">Kiểm tra, đánh giá</h5>
+                        <p class="small text-muted mb-0">Phòng/Sở GD kiểm tra hồ sơ trực tuyến, yêu cầu giải trình hoặc bổ sung (nếu cần).</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+                        <div class="process-icon"><i class="fas fa-gavel"></i></div>
+                        <h5 class="fw-bold">Công nhận mức độ chuyển đổi số</h5>
+                        <p class="small text-muted mb-0">Hội đồng thẩm định chốt điểm số và xếp hạng mức độ CĐS cho từng đơn vị.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-step">
+                        <span class="step-number">04</span>
+                        <div class="process-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h5 class="fw-bold">Công bố & cập nhật kết quả lên CSDL Ngành</h5>
+                        <p class="small text-muted mb-0">Xuất báo cáo, biểu đồ so sánh và công bố kết quả toàn ngành công khai.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-5 pt-5 border-top">
+                <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h3 class="fw-bold mb-3">Giải pháp & Tính năng đột phá</h3>
+                    <p class="text-muted mb-4">
+                        Hệ thống cung cấp bộ công cụ toàn diện giúp chuẩn hóa quy trình đánh giá, trực quan hóa dữ liệu và hỗ trợ công tác chỉ đạo, điều hành của Lãnh đạo ngành.
+                    </p>
+                    <a href="#" class="btn btn-link p-0 text-decoration-none fw-bold">Tìm hiểu thêm <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="eco-item h-100">
+                                <div class="me-3 text-primary bg-primary-subtle rounded-circle p-3">
+                                    <i class="fas fa-clipboard-check fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Số hóa Bộ tiêu chí</h6>
+                                    <small class="text-muted" style="font-size: 0.85rem; display: block; line-height: 1.4;">
+                                        Cập nhật chuẩn theo QĐ 4725, 3276, 3806. Tự động hóa quy trình chấm điểm và tổng hợp kết quả.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="eco-item h-100">
+                                <div class="me-3 text-success bg-success-subtle rounded-circle p-3">
+                                    <i class="fas fa-chart-pie fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Dashboard thông minh</h6>
+                                    <small class="text-muted" style="font-size: 0.85rem; display: block; line-height: 1.4;">
+                                        Biểu đồ Radar trực quan hóa dữ liệu đa chiều. So sánh đối sánh theo niên độ và cấp quản lý.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="eco-item h-100">
+                                <div class="me-3 text-warning bg-warning-subtle rounded-circle p-3">
+                                    <i class="fas fa-file-signature fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Báo cáo điều hành</h6>
+                                    <small class="text-muted" style="font-size: 0.85rem; display: block; line-height: 1.4;">
+                                        Xuất bảng xếp hạng, báo cáo toàn ngành tức thì. Hỗ trợ Lãnh đạo ra quyết định dựa trên dữ liệu.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="eco-item h-100">
+                                <div class="me-3 text-info bg-info-subtle rounded-circle p-3">
+                                    <i class="fas fa-database fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Kho Minh chứng số</h6>
+                                    <small class="text-muted" style="font-size: 0.85rem; display: block; line-height: 1.4;">
+                                        Lưu trữ tập trung, tái sử dụng tài nguyên số lâu dài. Tra cứu nhanh chóng phục vụ thanh kiểm tra.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="vai-tro" class="py-5" style="background-color: #f1f5f9;">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold text-dark">LỢI ÍCH NGƯỜI DÙNG</h2>
+                <p class="text-muted">Tối ưu hóa hiệu quả quản lý cho từng đối tượng</p>
+
+                <div class="role-tabs mt-4">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="tab-so-phong" data-bs-toggle="pill" data-bs-target="#content-so-phong" type="button">
+                                <i class="fas fa-building me-2"></i>Sở / Phòng GD&ĐT
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-truong" data-bs-toggle="pill" data-bs-target="#content-truong" type="button">
+                                <i class="fas fa-school me-2"></i>Các Trường học
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-giao-vien" data-bs-toggle="pill" data-bs-target="#content-giao-vien" type="button">
+                                <i class="fas fa-user-tie me-2"></i>Cán bộ / Giáo viên
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent" data-aos="fade-up" data-aos-delay="100">
+                <div class="tab-pane fade show active" id="content-so-phong">
+                    <div class="role-content-box">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <span class="badge bg-primary mb-3">Quản lý vĩ mô</span>
+                                <h3 class="fw-bold text-dark mb-4">Công cụ Chỉ đạo & Giám sát</h3>
+                                <ul class="list-unstyled check-list">
+                                    <li><i class="fas fa-check-circle text-success"></i> Theo dõi tiến độ CĐS của toàn tỉnh/huyện theo thời gian thực (Real-time Dashboard).</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Tự động tổng hợp báo cáo, không cần chờ đợi cấp dưới gửi file Excel thủ công.</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Có căn cứ dữ liệu chính xác để ra quyết định đầu tư hạ tầng CNTT.</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Giảm 80% thời gian họp hành và kiểm tra hồ sơ giấy trực tiếp tại cơ sở.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <img src="/img/SO GD&DT.jpg" class="img-fluid rounded-4 shadow-lg" alt="Sở GD Dashboard">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="content-truong">
+                    <div class="role-content-box">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                                <span class="badge bg-success mb-3">Quản trị nhà trường</span>
+                                <h3 class="fw-bold text-dark mb-4">Chuẩn hóa & Số hóa Hồ sơ</h3>
+                                <ul class="list-unstyled check-list">
+                                    <li><i class="fas fa-check-circle text-success"></i> Kho lưu trữ minh chứng số hóa không giới hạn, dễ dàng tái sử dụng cho các năm sau.</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Hệ thống tự động tính điểm, cảnh báo ngay các tiêu chí chưa đạt yêu cầu.</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Tiết kiệm chi phí in ấn, văn phòng phẩm và không gian lưu trữ hồ sơ giấy.</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Dễ dàng tra cứu lại lịch sử đánh giá để xây dựng kế hoạch cải tiến.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 order-lg-1 text-center">
+
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-4 shadow-lg" alt="Trường học">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="content-giao-vien">
+                    <div class="role-content-box">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <span class="badge bg-warning text-dark mb-3">Cán bộ / Giáo viên</span>
+                                <h3 class="fw-bold text-dark mb-4">Giảm áp lực sổ sách hành chính</h3>
+                                <ul class="list-unstyled check-list">
+                                    <li><i class="fas fa-check-circle text-success"></i> Tải lên minh chứng (kế hoạch bài dạy, chứng chỉ, văn bằng) mọi lúc mọi nơi.</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Minh bạch kết quả đánh giá cá nhân và của tổ chuyên môn.</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Tích hợp đăng nhập 1 lần (SSO) với các hệ thống khác (VnEdu, SMAS...).</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Nhận phản hồi thẩm định trực tuyến, không cần đi lại sửa hồ sơ.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 text-center">
+
+                                <img src="/img/THPT NHC.jpg" class="img-fluid rounded-4 shadow-lg" alt="Giáo viên">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4" data-aos="fade-up">
+                    <div class="stat-number">156</div>
+                    <div class="text-muted fw-bold text-uppercase small ls-1">Đơn vị tham gia</div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number">2.5K</div>
+                    <div class="text-muted fw-bold text-uppercase small ls-1">Minh chứng số</div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number">99%</div>
+                    <div class="text-muted fw-bold text-uppercase small ls-1">Đúng hạn</div>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number">24/7</div>
+                    <div class="text-muted fw-bold text-uppercase small ls-1">Hỗ trợ kỹ thuật</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4">
+                    <h5 class="text-uppercase fw-bold">Sở Giáo Dục - Đào Tạo An Giang</h5>
+                    <p class="small opacity-75 mb-4 pe-lg-5">
+                        Hệ thống quản lý cơ sở dữ liệu chuyên ngành, phục vụ công tác chuyển đổi số toàn diện ngành Giáo dục và Đào tạo.
+                    </p>
+                    <div>
+                        <a href="#" class="me-3 text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="me-3 text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fas fa-globe fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="text-uppercase fw-bold">Liên kết</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://moet.gov.vn/page/sitemapPortal">Cổng Bộ GD&ĐT</a></li>
+                        <li class="mb-2"><a href="https://dx.gov.vn/">Cổng Chuyển đổi số Quốc gia</a></li>
+                        <li class="mb-2"><a href="https://thuvienphapluat.vn/">Thư viện pháp luật</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-uppercase fw-bold">Liên hệ hỗ trợ</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-3 d-flex"><i class="fas fa-map-marker-alt mt-1 me-3 text-info"></i> <span>Toà nhà Genpacific, CVPM Quang Trung, Phường Tân Chánh Hiệp, Quận 12, TP.HCM</span></li>
+                        <li class="mb-3 d-flex"><i class="fas fa-phone-alt mt-1 me-3 text-info"></i> <span>0349.134.565</span></li>
+                        <li class="d-flex"><i class="fas fa-envelope mt-1 me-3 text-info"></i> <span>hcvp.sttech@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1); margin-top: 40px;">
+            <div class="text-center small opacity-50">
+                &copy; 2025 DTI STTECH. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Chỉ chạy hiệu ứng 1 lần khi scroll xuống
+            offset: 120, // Khoảng cách bắt đầu chạy
+            duration: 800
+        });
+
+            document.addEventListener("DOMContentLoaded", function () {
+            // Cấu hình thời gian chuyển (3000ms = 3 giây, 5000ms = 5 giây)
+            const delayTime = 2000;
+
+            const tabList = document.querySelectorAll('#pills-tab button[data-bs-toggle="pill"]');
+            const tabContent = document.getElementById('pills-tabContent');
+            let activeIndex = 0;
+            let intervalId;
+
+            // Hàm chuyển Tab tiếp theo
+            function rotateTabs() {
+                activeIndex = (activeIndex + 1) % tabList.length; // Quay vòng về 0 nếu hết
+                const nextTab = new bootstrap.Tab(tabList[activeIndex]);
+                nextTab.show();
+            }
+
+            // Bắt đầu chạy tự động
+            function startAutoPlay() {
+                intervalId = setInterval(rotateTabs, delayTime);
+            }
+
+            // Dừng chạy
+            function stopAutoPlay() {
+                clearInterval(intervalId);
+            }
+
+            // --- KHỞI ĐỘNG ---
+            startAutoPlay();
+
+            // --- XỬ LÝ TƯƠNG TÁC NGƯỜI DÙNG ---
+
+            // 1. Nếu người dùng bấm nút -> Reset lại bộ đếm
+            tabList.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    stopAutoPlay(); // Dừng cái cũ
+                    activeIndex = index; // Cập nhật vị trí đang chọn
+                    startAutoPlay(); // Chạy lại cái mới
+                });
+            });
+
+            // 2. Nếu người dùng đang rê chuột vào nội dung để đọc -> Tạm dừng
+            if(tabContent) {
+                tabContent.addEventListener('mouseenter', stopAutoPlay);
+                tabContent.addEventListener('mouseleave', startAutoPlay);
+            }
+        });
+    </script>
+</body>
+</html>

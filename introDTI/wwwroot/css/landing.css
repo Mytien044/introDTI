@@ -1,0 +1,440 @@
+﻿/* File: wwwroot/css/landing.css - FINAL FIXED & CLEAN */
+
+:root {
+    /* --- BẢNG MÀU CHUẨN --- */
+    --primary-blue: #0066CC; /* VNPT Blue */
+    --secondary-blue: #004494;
+    --accent-gold: #FFAB00;
+    --text-dark: #2c3e50;
+    /* Gradient & Shadow */
+    --tech-gradient: linear-gradient(135deg, #0066CC 0%, #00468C 100%);
+    --soft-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.1); /* Đã thêm biến này */
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif; /* Ưu tiên dùng font này nếu đã link ở HTML */
+    color: var(--text-dark);
+    background-color: #f8faff;
+    overflow-x: hidden;
+}
+
+/* --- 1. NAVBAR --- */
+.navbar-custom {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 12px 0;
+}
+
+.app-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-text {
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: #555 !important;
+    font-weight: 600;
+    margin: 0 12px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+    .nav-link:hover {
+        color: var(--primary-blue) !important;
+    }
+
+.btn-login {
+    background: var(--tech-gradient);
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.2);
+}
+
+    .btn-login:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 102, 204, 0.4);
+    }
+
+/* --- 2. HERO SECTION --- */
+.hero-section {
+    /* Thay đổi chính ở đây: Dùng radial-gradient */
+    background: radial-gradient(circle at center, rgba(0, 50, 120, 0.5) 0%, rgba(2, 15, 38, 0.95) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hiệu ứng parallax khi cuộn chuột nhìn rất xịn */
+    color: #fff;
+    padding: 120px 0; /* Tăng padding chút cho thoáng */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.floating-anim {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* --- 3. LEGAL CARDS (Khung tiêu chí) --- */
+.section-title-bar {
+    width: 60px;
+    height: 5px;
+    background: var(--primary-blue);
+    margin: 15px auto 30px;
+    border-radius: 10px;
+}
+
+.legal-card {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 35px 30px;
+    height: 100%;
+    box-shadow: var(--soft-shadow);
+    transition: 0.4s;
+    border-top: 5px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+    .legal-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+.card-blue:hover {
+    border-top-color: var(--primary-blue);
+}
+
+.card-gold:hover {
+    border-top-color: var(--accent-gold);
+}
+
+.card-green:hover {
+    border-top-color: #00C853;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #F0F7FF;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+    transition: 0.5s;
+}
+
+.legal-card:hover .icon-circle {
+    background: var(--primary-blue);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+/* --- 4. PROCESS STEPS (Quy trình) --- */
+.process-step {
+    position: relative;
+    padding: 30px 25px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    transition: all 0.3s;
+    border: 1px solid #f0f2f5;
+    height: 100%;
+}
+
+    .process-step:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-blue);
+        box-shadow: 0 15px 40px rgba(0, 102, 204, 0.15);
+    }
+
+.step-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #f1f5f9;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    line-height: 1;
+    z-index: 0;
+}
+
+.process-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--tech-gradient); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 5. ECOSYSTEM (Giải pháp & Tính năng đột phá) --- */
+.eco-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+    .eco-item:hover {
+        background: #fff;
+        border-color: var(--primary-blue);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transform: translateX(5px);
+    }
+
+/* --- 6. ROLE TABS (Lợi ích) --- */
+.role-tabs .nav-pills {
+    background: #eef2f6;
+    padding: 5px;
+    border-radius: 50px;
+    display: inline-flex;
+}
+
+.role-tabs .nav-link {
+    border-radius: 50px;
+    padding: 10px 30px;
+    color: #64748b;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+    .role-tabs .nav-link.active {
+        background: var(--primary-blue);
+        color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
+    }
+
+.role-content-box {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--soft-shadow);
+    border: 1px solid rgba(0,0,0,0.02);
+    margin-top: 30px;
+}
+
+.check-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: start;
+    color: #555;
+}
+
+.check-list i {
+    margin-top: 4px;
+    margin-right: 12px;
+    color: #00C853;
+    font-size: 1.1rem;
+}
+
+/* --- 7. STATS & FOOTER --- */
+.stats-section {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer {
+    background-color: #091E42; /* Navy đậm */
+    color: #a0aec0;
+    padding: 70px 0 30px;
+    font-size: 0.95rem;
+}
+
+    footer h5 {
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #fff;
+        letter-spacing: 0.5px;
+    }
+
+    footer ul li {
+        margin-bottom: 10px;
+    }
+
+    footer a {
+        color: #a0aec0;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        footer a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        clip-path: none;
+        padding: 100px 0 60px;
+    }
+
+    .role-tabs .nav-pills {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 16px;
+    }
+
+    .role-tabs .nav-link {
+        margin-bottom: 5px;
+        text-align: center;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .role-content-box {
+        padding: 20px;
+    }
+}
+/* --- 1. CSS CHO QUY TRÌNH (TIMELINE) --- */
+.timeline-line-horizontal {
+    position: absolute;
+    top: 30px; /* Căn chỉnh để đường kẻ đi qua số thứ tự */
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: #e9ecef;
+    z-index: 0;
+}
+
+.step-card {
+    position: relative;
+    z-index: 1; /* Để đè lên đường kẻ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .step-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    }
+
+.step-badge {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+
+/* --- 2. CSS CHO TÍNH NĂNG (HOVER REVEAL) --- */
+.feature-hover-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    height: 220px; /* Chiều cao cố định để đồng đều */
+    border: 1px solid #f0f2f5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Căn giữa nội dung */
+}
+
+.f-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+}
+
+/* Phần mô tả mặc định sẽ bị ẩn hoặc mờ đi */
+.f-desc {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-top: 0;
+}
+
+/* HIỆU ỨNG KHI RÊ CHUỘT (HOVER) */
+.feature-hover-card:hover {
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+}
+
+    .feature-hover-card:hover .f-icon {
+        transform: scale(0.8) translateY(-10px); /* Thu nhỏ icon đẩy lên trên */
+        margin-bottom: 0;
+    }
+
+    .feature-hover-card:hover .f-desc {
+        max-height: 100px; /* Mở rộng chiều cao để hiện chữ */
+        opacity: 1;
+        margin-top: 10px;
+    }
