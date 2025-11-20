@@ -1,334 +1,241 @@
-﻿:root {
-    --primary-900: #062b4f;
-    --primary-700: #0f4c81;
-    --primary-500: #1571d1;
-    --accent: #00b4ff;
-    --glass: rgba(255,255,255,0.08);
-    --muted: #98a3b8;
-    --card-radius: 14px;
-    --shadow-1: 0 6px 24px rgba(3, 12, 34, 0.18);
-}
+﻿/* File: wwwroot/css/login.css - FIX LAYOUT */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
 
-/* Reset base */
-* {
-    box-sizing: border-box
-}
-
-html, body {
-    height: 100%
+:root {
+    --primary-color: #0066CC;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --input-bg: #f8f9fa;
+    --gradient-bg: linear-gradient(135deg, #0f1c3a 0%, #1a2a51 100%);
+    --gradient-sidebar: linear-gradient(135deg, rgba(0, 102, 204, 0.85) 0%, rgba(0, 64, 128, 0.95) 100%);
 }
 
 body {
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    margin: 0;
-    background: linear-gradient(180deg, #061a2a 0%, #0a2740 35%, #08293f 100%);
-    color: #0b2540;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Layout grid */
-.login-wrap {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--gradient-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 24px;
-}
-
-.login-grid {
-    width: 1100px;
-    max-width: calc(100% - 48px);
-    height: 720px;
-    display: grid;
-    grid-template-columns: 1fr 540px;
-    border-radius: 18px;
+    margin: 0;
     overflow: hidden;
-    box-shadow: var(--shadow-1);
 }
 
-/* Illustration (left) */
-.illustration-side {
+/* Khung chứa chính */
+.login-wrapper {
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1100px; /* Tăng chiều rộng để thoáng hơn */
+    min-height: 650px;
+    display: flex;
+    overflow: hidden;
     position: relative;
-    background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+    z-index: 10;
+}
+
+/* --- CỘT TRÁI (SIDEBAR) --- */
+.login-sidebar {
+    width: 45%; /* Chia tỷ lệ 45% cho cột trái */
+    background: var(--gradient-sidebar);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn giữa dọc */
+    align-items: center; /* Căn giữa ngang */
+    text-align: center;
     color: #fff;
-    padding: 36px 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.illustration-overlay {
-    width: 100%;
-    max-width: 680px;
     position: relative;
-    height: 100%;
 }
 
-.brand-top {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.brand-logo {
-    height: 44px;
-    width: auto;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.08);
-    padding: 6px;
-}
-
-.brand-title h6 {
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-}
-
-.brand-title small {
-    display: block;
-    color: rgba(255,255,255,0.8);
-    font-size: 0.85rem;
-    margin-top: 2px;
-}
-
-.hero-text {
-    margin-top: 28px;
-    max-width: 460px;
-}
-
-    .hero-text h1 {
-        font-size: 2.2rem;
-        margin: 0 0 8px;
-        line-height: 1.02;
-        font-weight: 800;
-    }
-
-    .hero-text p {
-        margin: 0 0 20px;
-        color: rgba(255,255,255,0.88);
-        font-size: 1rem;
-    }
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-    .feature-list li {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        color: rgba(255,255,255,0.9);
-        font-weight: 600;
-        font-size: 0.92rem;
-    }
-
-    .feature-list i {
-        background: rgba(255,255,255,0.08);
-        padding: 8px;
-        border-radius: 8px;
-    }
-
-/* 3D illustration box */
-.illustration-3d {
+.sidebar-brand {
     position: absolute;
-    right: -40px;
-    bottom: 36px;
-    width: 420px;
-    height: 420px;
+    top: 30px;
+    left: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transform: rotate(-6deg);
-    opacity: 0.98;
+    gap: 10px;
 }
 
-    .illustration-3d img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        filter: drop-shadow(0 24px 40px rgba(3,12,34,0.5));
-        border-radius: 12px;
+.sidebar-title {
+    font-size: 2.2rem; /* Giảm size chữ cho vừa vặn */
+    font-weight: 800;
+    line-height: 1.3;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar-description {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 80%;
+    margin-bottom: 30px;
+}
+
+/* Hình minh họa */
+.sidebar-illustration {
+    width: 80%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
     }
 
-/* Footer small */
-.illustration-footer {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.sidebar-footer {
     position: absolute;
-    left: 36px;
-    bottom: 18px;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.65)
+    bottom: 20px;
+    font-size: 0.75rem;
+    opacity: 0.6;
 }
 
-/* Form side */
-.form-side {
-    background: linear-gradient(180deg, rgba(255,255,255,1), rgba(248,250,254,1));
-    padding: 48px;
+/* --- CỘT PHẢI (FORM) --- */
+.login-form-area {
+    width: 55%; /* Chia tỷ lệ 55% cho cột phải */
+    padding: 60px 80px; /* Tăng padding để form co lại vào giữa */
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    background-color: #fff;
 }
 
-.form-card {
-    width: 100%;
-    max-width: 420px;
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 28px;
-    box-shadow: 0 10px 30px rgba(12,38,72,0.06);
+.form-header {
+    margin-bottom: 30px;
 }
 
-    /* Titles */
-    .form-card h2 {
+    .form-header h2 {
+        font-size: 2rem;
         font-weight: 700;
-        margin-bottom: 0.2rem;
+        color: var(--text-dark);
+        margin-bottom: 10px;
     }
 
-    .form-card p {
-        margin-bottom: 1rem;
-        color: var(--muted)
+    .form-header p {
+        color: var(--text-muted);
     }
 
-/* Input custom */
-.input-group.custom .input-group-text {
-    background: transparent;
-    border: 1px solid #eef2f7;
-    border-right: 0;
-    padding: 0.6rem 0.9rem;
-    color: var(--primary-700)
-}
-
-.input-group.custom .form-control {
-    border-left: 0;
-    border: 1px solid #eef2f7;
-    padding: 0.65rem 0.75rem;
-    height: 46px;
-    font-size: 0.95rem
-}
-
+/* Input Styles */
 .input-group.custom {
-    border-radius: 10px;
-    overflow: hidden
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+    margin-bottom: 20px;
 }
 
-.position-relative .toggle-pass {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted)
+    .input-group.custom:focus-within {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+    }
+
+.input-group-text {
+    background: #fff;
+    border: none;
+    color: var(--text-muted);
+    padding-left: 15px;
 }
 
-.toggle-pass i {
-    font-size: 1rem
+.form-control-lg {
+    border: none;
+    font-size: 0.95rem;
+    height: 50px;
+    padding-left: 10px;
 }
 
-/* Button gradient */
+    .form-control-lg:focus {
+        box-shadow: none;
+    }
+
+/* Button */
 .btn-gradient {
-    background: linear-gradient(90deg, var(--primary-700), var(--primary-500));
-    color: #fff;
-    border: 0;
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-weight: 700;
-    box-shadow: 0 8px 24px rgba(21,113,209,0.18);
+    background: linear-gradient(135deg, #0066CC 0%, #00468C 100%);
+    color: white;
+    border: none;
+    height: 50px;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
     .btn-gradient:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 14px 38px rgba(21,113,209,0.18)
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
+        color: white;
+    }
+
+/* SSO Buttons */
+.sso-btn {
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #333;
+    transition: 0.2s;
+}
+
+    .sso-btn:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+    }
+
+    .sso-btn img {
+        height: 20px;
+        margin-right: 8px;
     }
 
 /* Divider */
 .divider {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 18px
+    color: #999;
+    font-size: 0.85rem;
+    margin: 25px 0;
 }
 
     .divider::before, .divider::after {
-        content: "";
+        content: '';
         flex: 1;
-        height: 1px;
-        background: #eef2f7
+        border-bottom: 1px solid #eee;
     }
 
     .divider span {
-        font-size: 0.85rem;
-        color: var(--muted)
-    }
-
-/* SSO buttons */
-.sso-btn {
-    border-radius: 10px;
-    padding: 10px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px
-}
-
-    .sso-btn img {
-        filter: none;
-        opacity: 0.95
+        padding: 0 10px;
     }
 
 /* Responsive */
 @media (max-width: 992px) {
-    .login-grid {
-        grid-template-columns: 1fr;
-        height: auto;
-        border-radius: 12px;
+    .login-wrapper {
+        flex-direction: column;
+        max-width: 450px;
+        min-height: auto;
+        margin: 20px;
     }
 
-    .illustration-3d {
-        right: -10px;
-        width: 320px;
-        height: 320px;
-        transform: rotate(0deg);
-        bottom: -30px;
-        opacity: 0.95
+    .login-sidebar {
+        display: none;
     }
 
-    .illustration-side {
-        padding: 30px;
-    }
-
-    .form-side {
-        padding: 28px;
-    }
-
-    .form-card {
-        margin-top: 260px
-    }
-
-    .illustration-overlay {
-        height: 420px
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-text h1 {
-        font-size: 1.4rem
-    }
-
-    .hero-text p {
-        font-size: 0.92rem
-    }
-
-    .form-card {
-        padding: 20px
-    }
-
-    .illustration-3d {
-        display: none
+    .login-form-area {
+        width: 100%;
+        padding: 40px 30px;
     }
 }
