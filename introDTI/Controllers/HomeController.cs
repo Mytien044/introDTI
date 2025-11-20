@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using introDTI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +20,12 @@ namespace introDTI.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult RankingAll()
+        {
+            ViewData["Title"] = "Bảng xếp hạng DTI Toàn tỉnh";
+            return View();
         }
     }
 }

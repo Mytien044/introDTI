@@ -1,0 +1,290 @@
+﻿@{
+    Layout = null; /* Hoặc để Layout = "_Layout" nếu bạn đã có layout chung */
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DTI System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --bg-light: #f4f7fa;
+            --text-main: #1e293b;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+        }
+
+        /* Header gọn gàng */
+        .page-header {
+            background: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* Thanh công cụ lọc */
+        .filter-bar {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .form-select, .form-control {
+            border-radius: 8px;
+            border-color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+            .form-select:focus, .form-control:focus {
+                border-color: var(--primary-blue);
+                box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+            }
+
+        /* Bảng dữ liệu */
+        .ranking-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .table thead th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding: 15px;
+        }
+
+        .table tbody td {
+            padding: 15px;
+            vertical-align: middle;
+            font-size: 0.95rem;
+        }
+
+        .rank-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
+        .rank-1 {
+            background: #FFD700;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(255, 215, 0, 0.4);
+        }
+
+        .rank-2 {
+            background: #C0C0C0;
+            color: #fff;
+        }
+
+        .rank-3 {
+            background: #CD7F32;
+            color: #fff;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .bg-success-soft {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .bg-primary-soft {
+            background-color: #e0f2fe;
+            color: #075985;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="page-header sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <a href="/Home/Index" class="text-decoration-none me-3 text-muted"><i class="fas fa-arrow-left"></i> Quay lại</a>
+                <h4 class="mb-0 fw-bold text-primary border-start ps-3 border-2">TỔNG THỂ XẾP HẠNG CHỈ SỐ CHUYỂN ĐỔI SỐ Tỉnh An Giang (2024 - 2025)</h4>
+            </div>
+            <button class="btn btn-sm btn-success"><i class="fas fa-file-excel me-2"></i>Xuất Excel</button>
+        </div>
+    </header>
+
+    <div class="container py-4">
+
+        <div class="filter-bar">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">Cấp quản lý</label>
+                    <select class="form-select">
+                        <option value="">Tất cả</option>
+                        <option value="so">Sở GD&ĐT</option>
+                        <option value="phong">Phòng GD&ĐT</option>
+                        <option value="truong" selected>Trường học</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Địa bàn (Huyện/TP)</label>
+                    <select class="form-select">
+                        <option value="">Toàn tỉnh An Giang</option>
+                        <option value="lx">TP. Long Xuyên</option>
+                        <option value="cd">TP. Châu Đốc</option>
+                        <option value="tc">TX. Tân Châu</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Tìm kiếm đơn vị</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="fas fa-search text-muted"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="Nhập tên trường...">
+                    </div>
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button class="btn btn-primary w-100 fw-bold">Áp dụng</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ranking-card">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-center" width="60">Hạng</th>
+                            <th>Tên đơn vị</th>
+                            <th>Trực thuộc</th>
+                            <th class="text-center">Điểm tự chấm</th>
+                            <th class="text-center">Điểm thẩm định</th>
+                            <th class="text-center">Mức độ CĐS</th>
+                            <th class="text-center">Trạng thái</th>
+                            <th class="text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="rank-badge rank-1">1</div></td>
+                            <td>
+                                <div class="fw-bold text-primary">Trường THPT Chuyên Thoại Ngọc Hầu</div>
+                                <small class="text-muted">TP. Long Xuyên</small>
+                            </td>
+                            <td>Sở GD&ĐT</td>
+                            <td class="text-center text-muted">995</td>
+                            <td class="text-center fw-bold fs-5 text-primary">990</td>
+                            <td class="text-center"><span class="badge bg-success">Mức độ 3</span></td>
+                            <td class="text-center"><span class="badge bg-success-soft rounded-pill"><span class="status-dot bg-success"></span>Đã công bố</span></td>
+                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="rank-badge rank-2">2</div></td>
+                            <td>
+                                <div class="fw-bold text-dark">Trường THPT Long Xuyên</div>
+                                <small class="text-muted">TP. Long Xuyên</small>
+                            </td>
+                            <td>Sở GD&ĐT</td>
+                            <td class="text-center text-muted">970</td>
+                            <td class="text-center fw-bold fs-5 text-primary">965</td>
+                            <td class="text-center"><span class="badge bg-success">Mức độ 3</span></td>
+                            <td class="text-center"><span class="badge bg-success-soft rounded-pill"><span class="status-dot bg-success"></span>Đã công bố</span></td>
+                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="rank-badge rank-3">3</div></td>
+                            <td>
+                                <div class="fw-bold text-dark">Trường THPT Châu Văn Liêm</div>
+                                <small class="text-muted">Huyện Chợ Mới</small>
+                            </td>
+                            <td>Sở GD&ĐT</td>
+                            <td class="text-center text-muted">950</td>
+                            <td class="text-center fw-bold fs-5 text-primary">940</td>
+                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
+                            <td class="text-center"><span class="badge bg-success-soft rounded-pill"><span class="status-dot bg-success"></span>Đã công bố</span></td>
+                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="rank-badge">4</div></td>
+                            <td>
+                                <div class="fw-bold text-dark">Trường THCS Nguyễn Trãi</div>
+                                <small class="text-muted">TP. Châu Đốc</small>
+                            </td>
+                            <td>Phòng GD Châu Đốc</td>
+                            <td class="text-center text-muted">920</td>
+                            <td class="text-center fw-bold fs-5 text-primary">910</td>
+                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
+                            <td class="text-center"><span class="badge bg-primary-soft rounded-pill"><span class="status-dot bg-primary"></span>Đã duyệt</span></td>
+                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="rank-badge">5</div></td>
+                            <td>
+                                <div class="fw-bold text-dark">Trường Tiểu học Lê Quý Đôn</div>
+                                <small class="text-muted">TP. Long Xuyên</small>
+                            </td>
+                            <td>Phòng GD Long Xuyên</td>
+                            <td class="text-center text-muted">900</td>
+                            <td class="text-center fw-bold fs-5 text-primary">890</td>
+                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
+                            <td class="text-center"><span class="badge bg-primary-soft rounded-pill"><span class="status-dot bg-primary"></span>Đã duyệt</span></td>
+                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center p-3 border-top">
+                <small class="text-muted">Hiển thị 1-5 trên tổng số 156 đơn vị</small>
+                <nav>
+                    <ul class="pagination pagination-sm mb-0">
+                        <li class="page-item disabled"><a class="page-link" href="#">Trước</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
