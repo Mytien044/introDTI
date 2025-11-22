@@ -79,21 +79,6 @@
                         <a href="/Home/RankingAll" class="btn btn-sm btn-outline-light rounded-pill px-3">Xem toàn bộ <i class="fas fa-arrow-right ms-1"></i></a>
                     </div>
 
-                    <div class="ranking-tabs">
-                        <ul class="nav nav-tabs border-0" id="rankingTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="phong-tab" data-bs-toggle="tab" data-bs-target="#rank-phong" type="button">
-                                    🏢 Khối Phòng GD&ĐT
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="truong-tab" data-bs-toggle="tab" data-bs-target="#rank-truong" type="button">
-                                    🏫 Khối Trường THPT
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-
                     <div class="tab-content" id="rankingTabContent">
 
                         <div class="tab-pane fade show active" id="rank-phong">
@@ -103,9 +88,9 @@
                                         <tr>
                                             <th class="text-center" style="width: 60px;">#</th>
                                             <th>Đơn vị hành chính</th>
-                                            <th class="text-center">Mức độ CĐS</th>
+                                            <th class="text-center">Tiến độ</th>
                                             <th class="text-center">Điểm số</th>
-                                            <th class="text-center">Xếp loại</th>
+                                            <th class="text-center">Mức độ CĐS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -114,95 +99,44 @@
                                             <td class="fw-bold text-primary">Phòng GD&ĐT TP. Long Xuyên</td>
                                             <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-success" style="width: 98%"></div></div></td>
                                             <td class="text-center fw-bold">980</td>
-                                            <td class="text-center"><span class="badge bg-success">Dẫn đầu</span></td>
+                                            <td class="text-center"><span class="badge bg-success">Mức độ 3</span></td>
                                         </tr>
+
                                         <tr>
                                             <td><div class="rank-badge rank-2">2</div></td>
                                             <td class="fw-bold text-dark">Phòng GD&ĐT TP. Châu Đốc</td>
                                             <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-success" style="width: 95%"></div></div></td>
-                                            <td class="text-center fw-bold">950</td>
-                                            <td class="text-center"><span class="badge bg-primary">Xuất sắc</span></td>
+                                            <td class="text-center fw-bold">965</td>
+                                            <td class="text-center"><span class="badge bg-success">Mức độ 3</span></td>
                                         </tr>
+
                                         <tr>
                                             <td><div class="rank-badge rank-3">3</div></td>
                                             <td class="fw-bold text-dark">Phòng GD&ĐT TX. Tân Châu</td>
-                                            <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-primary" style="width: 92%"></div></div></td>
-                                            <td class="text-center fw-bold">920</td>
-                                            <td class="text-center"><span class="badge bg-primary">Xuất sắc</span></td>
+                                            <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-primary" style="width: 85%"></div></div></td>
+                                            <td class="text-center fw-bold">840</td>
+                                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
                                         </tr>
+
                                         <tr>
                                             <td class="text-center fw-bold text-muted">4</td>
                                             <td>Phòng GD&ĐT Huyện Chợ Mới</td>
-                                            <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-info" style="width: 88%"></div></div></td>
-                                            <td class="text-center fw-bold">880</td>
-                                            <td class="text-center"><span class="badge bg-info text-dark">Tốt</span></td>
+                                            <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-info" style="width: 70%"></div></div></td>
+                                            <td class="text-center fw-bold">690</td>
+                                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
                                         </tr>
                                         <tr>
                                             <td class="text-center fw-bold text-muted">5</td>
-                                            <td>Phòng GD&ĐT Huyện Châu Phú</td>
-                                            <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-warning" style="width: 85%"></div></div></td>
-                                            <td class="text-center fw-bold">850</td>
-                                            <td class="text-center"><span class="badge bg-info text-dark">Tốt</span></td>
+                                            <td>Phòng GD&ĐT Huyện Tri Tôn</td>
+                                            <td class="text-center"><div class="progress" style="height: 6px; width: 80px; margin: auto;"><div class="progress-bar bg-warning" style="width: 50%"></div></div></td>
+                                            <td class="text-center fw-bold">645</td>
+                                            <td class="text-center"><span class="badge bg-warning text-dark">Mức độ 1</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-
-                        <div class="tab-pane fade" id="rank-truong">
-                            <div class="table-responsive">
-                                <table class="table ranking-table table-hover mb-0">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th class="text-center" style="width: 60px;">#</th>
-                                            <th>Tên Trường</th>
-                                            <th class="text-center">Trực thuộc</th>
-                                            <th class="text-center">Điểm số</th>
-                                            <th class="text-center">Xếp loại</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><div class="rank-badge rank-1">1</div></td>
-                                            <td class="fw-bold text-primary">Trường THPT Chuyên Thoại Ngọc Hầu</td>
-                                            <td class="text-center small text-muted">Sở GD&ĐT</td>
-                                            <td class="text-center fw-bold">990</td>
-                                            <td class="text-center"><span class="badge bg-success">Xuất sắc</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="rank-badge rank-2">2</div></td>
-                                            <td class="fw-bold text-dark">Trường THPT Long Xuyên</td>
-                                            <td class="text-center small text-muted">Sở GD&ĐT</td>
-                                            <td class="text-center fw-bold">965</td>
-                                            <td class="text-center"><span class="badge bg-success">Xuất sắc</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="rank-badge rank-3">3</div></td>
-                                            <td class="fw-bold text-dark">Trường THPT Châu Văn Liêm</td>
-                                            <td class="text-center small text-muted">Sở GD&ĐT</td>
-                                            <td class="text-center fw-bold">940</td>
-                                            <td class="text-center"><span class="badge bg-primary">Tốt</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center fw-bold text-muted">4</td>
-                                            <td>Trường THCS Nguyễn Trãi</td>
-                                            <td class="text-center small text-muted">TP. Châu Đốc</td>
-                                            <td class="text-center fw-bold">910</td>
-                                            <td class="text-center"><span class="badge bg-primary">Tốt</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center fw-bold text-muted">5</td>
-                                            <td>Trường Tiểu học Lê Quý Đôn</td>
-                                            <td class="text-center small text-muted">TP. Long Xuyên</td>
-                                            <td class="text-center fw-bold">890</td>
-                                            <td class="text-center"><span class="badge bg-primary">Tốt</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
+                        </<div></div>
                 </div>
             </div>
         </div>
@@ -223,7 +157,7 @@
                         <h5 class="fw-bold mb-2">CẤP SỞ & PHÒNG GDĐT</h5>
                         <p class="text-muted small mb-3 fst-italic">Quyết định 3806/QĐ-BGDĐT (29/11/2024)</p>
                         <p class="small mb-4">Bộ tiêu chí cho cơ quan quản lý giáo dục cấp tỉnh và cấp huyện. 6 trụ cột – 48 tiêu chí – hơn 140 minh chứng.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-4">Bộ tiêu chí QĐ 3806</a>
+                        <a href="https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Quyet-dinh-3806-QD-BGDDT-2024-Bo-Chi-so-danh-gia-muc-do-chuyen-doi-so-so-giao-duc-dao-tao-633846.aspx" class="btn btn-sm btn-outline-primary rounded-pill px-4">Bộ tiêu chí QĐ 3806</a>
                     </div>
                 </div>
 
@@ -233,7 +167,7 @@
                         <h5 class="fw-bold mb-2 text-dark">TRƯỜNG PHỔ THÔNG & GDTX</h5>
                         <p class="text-muted small mb-3 fst-italic">Quyết định 4725/QĐ-BGDĐT (30/12/2022)</p>
                         <p class="small mb-4 text-dark">05 trụ cột – 25 tiêu chí – 100+ minh chứng. Tự đánh giá – Kiểm tra Phòng GD – Công nhận Sở GD.</p>
-                        <a href="#" class="btn btn-sm btn-outline-success rounded-pill px-4">Bộ tiêu chí QĐ 4725</a>
+                        <a href="https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Quyet-dinh-4725-QD-BGDDT-2022-Bo-chi-so-danh-gia-chuyen-doi-so-co-so-giao-duc-pho-thong-549855.aspx" class="btn btn-sm btn-outline-success rounded-pill px-4">Bộ tiêu chí QĐ 4725</a>
                     </div>
                 </div>
 
@@ -243,7 +177,7 @@
                         <h5 class="fw-bold mb-2">CƠ SỞ GD MẦM NON</h5>
                         <p class="text-muted small mb-3 fst-italic">Quyết định 3276/QĐ-BGDĐT (30/10/2024)</p>
                         <p class="small mb-4">Bộ tiêu chí riêng dành cho GDMN. Tập trung quản trị số mầm non, hồ sơ giáo dục, môi trường tương tác.</p>
-                        <a href="#" class="btn btn-sm btn-outline-warning rounded-pill px-4 text-dark">Bộ tiêu chí QĐ 3276</a>
+                        <a href="https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Quyet-dinh-3276-QD-BGDDT-2024-Bo-chi-so-danh-gia-muc-do-chuyen-doi-so-co-so-giao-duc-mam-non-631922.aspx" class="btn btn-sm btn-outline-warning rounded-pill px-4 text-dark">Bộ tiêu chí QĐ 3276</a>
                     </div>
                 </div>
             </div>
@@ -255,153 +189,163 @@
             <div class="text-center mb-5" data-aos="fade-up">
                 <h6 class="text-primary fw-bold text-uppercase ls-2">Lộ trình chuẩn hóa</h6>
                 <h2 class="fw-bold text-dark">CÁC BƯỚC ĐÁNH GIÁ CHUYỂN ĐỔI SỐ</h2>
-                <p class="text-muted mx-auto" style="max-width: 700px;">
-                    Quy trình đánh giá thống nhất cho toàn ngành, bám sát hướng dẫn tại các Quyết định của Bộ GD&ĐT.
-                </p>
                 <div style="width: 60px; height: 4px; background: var(--primary-blue); margin: 15px auto; border-radius: 2px;"></div>
             </div>
 
-            <div class="process-wrapper">
-                <div class="timeline-line-horizontal d-none d-md-block"></div>
+            <div class="timeline-row">
 
-                <div class="row g-4">
-
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                        <div class="process-card bg-step-blue">
-                            <span class="step-number-large text-step-blue">01</span>
-                            <div class="process-icon-box text-step-blue">
-                                <i class="fas fa-file-signature"></i>
-                            </div>
-                            <div class="text-center">
-                                <span class="step-actor text-step-blue">Cơ sở giáo dục</span>
-                                <h5 class="step-title">Tự đánh giá</h5>
-                            </div>
-                            <ul class="step-desc-list">
-                                <li>Rà soát mức độ đáp ứng từng tiêu chí.</li>
-                                <li>Tự chấm điểm theo Bộ tiêu chí tương ứng (MN / PT / GDTX).</li>
-                                <li>Thu thập và tải minh chứng số lên hệ thống.</li>
-                            </ul>
-                        </div>
+                <div class="timeline-step step-blue" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-marker">
+                        <i class="fas fa-edit step-icon"></i>
+                        <div class="step-badge-num">01</div>
                     </div>
-
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
-                        <div class="process-card bg-step-yellow">
-                            <span class="step-number-large text-step-yellow">02</span>
-                            <div class="process-icon-box text-step-yellow">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                            <div class="text-center">
-                                <span class="step-actor text-step-yellow">Phòng/Sở GDĐT</span>
-                                <h5 class="step-title">Kiểm tra & Thẩm định sơ bộ</h5>
-                            </div>
-                            <ul class="step-desc-list">
-                                <li>Kiểm tra hồ sơ tự đánh giá của đơn vị.</li>
-                                <li>Xem xét minh chứng, đối chiếu tiêu chí.</li>
-                                <li>Yêu cầu bổ sung / giải trình (nếu cần).</li>
-                            </ul>
-                        </div>
+                    <div class="step-content">
+                        <span class="step-actor-label">Cơ sở giáo dục</span>
+                        <h5 class="step-name">Tự đánh giá</h5>
+                        <ul class="step-details">
+                            <li>Rà soát mức độ đáp ứng tiêu chí.</li>
+                            <li>Tự chấm điểm trên hệ thống.</li>
+                            <li>Tải lên minh chứng số hóa.</li>
+                        </ul>
                     </div>
-
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="process-card bg-step-green">
-                            <span class="step-number-large text-step-green">03</span>
-                            <div class="process-icon-box text-step-green">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="text-center">
-                                <span class="step-actor text-step-green">Sở GDĐT</span>
-                                <h5 class="step-title">Công nhận mức độ CĐS</h5>
-                            </div>
-                            <ul class="step-desc-list">
-                                <li>Hội đồng thẩm định chấm lại và xác nhận kết quả.</li>
-                                <li>Phê duyệt mức độ chuyển đổi số của từng cơ sở.</li>
-                                <li>Xếp loại mức CĐS theo quy định của Bộ.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="450">
-                        <div class="process-card bg-step-purple">
-                            <span class="step-number-large text-step-purple">04</span>
-                            <div class="process-icon-box text-step-purple">
-                                <i class="fas fa-bullhorn"></i>
-                            </div>
-                            <div class="text-center">
-                                <span class="step-actor text-step-purple">Sở GDĐT</span>
-                                <h5 class="step-title">Công bố & Đồng bộ</h5>
-                            </div>
-                            <ul class="step-desc-list">
-                                <li>Công bố kết quả đánh giá toàn ngành.</li>
-                                <li>Xuất báo cáo, bảng xếp hạng, biểu đồ so sánh.</li>
-                                <li>Đồng bộ dữ liệu lên CSDL ngành của Bộ GDĐT.</li>
-                            </ul>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="timeline-step step-yellow" data-aos="fade-up" data-aos-delay="150">
+                    <div class="step-marker">
+                        <i class="fas fa-search-plus step-icon"></i>
+                        <div class="step-badge-num">02</div>
+                    </div>
+                    <div class="step-content">
+                        <span class="step-actor-label">Phòng / Sở GDĐT</span>
+                        <h5 class="step-name">Kiểm tra & Thẩm định</h5>
+                        <ul class="step-details">
+                            <li>Kiểm tra hồ sơ đơn vị nộp.</li>
+                            <li>Đối chiếu tiêu chí và minh chứng.</li>
+                            <li>Yêu cầu giải trình (nếu cần).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-step step-green" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-marker">
+                        <i class="fas fa-gavel step-icon"></i>
+                        <div class="step-badge-num">03</div>
+                    </div>
+                    <div class="step-content">
+                        <span class="step-actor-label">Hội đồng Sở GDĐT</span>
+                        <h5 class="step-name">Công nhận kết quả</h5>
+                        <ul class="step-details">
+                            <li>Chấm lại và xác nhận điểm số.</li>
+                            <li>Phê duyệt mức độ CĐS.</li>
+                            <li>Ban hành quyết định công nhận.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-step step-purple" data-aos="fade-up" data-aos-delay="450">
+                    <div class="step-marker">
+                        <i class="fas fa-bullhorn step-icon"></i>
+                        <div class="step-badge-num">04</div>
+                    </div>
+                    <div class="step-content">
+                        <span class="step-actor-label">Toàn ngành</span>
+                        <h5 class="step-name">Công bố & Đồng bộ</h5>
+                        <ul class="step-details">
+                            <li>Công bố kết quả toàn tỉnh.</li>
+                            <li>Xuất báo cáo xếp hạng.</li>
+                            <li>Đồng bộ lên CSDL Bộ GDĐT.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-    <section id="tinh-nang" class="feature-section-pro">
+    <section class="strategy-section">
+        <div class="strategy-bg-deco"></div>
         <div class="container">
 
             <div class="text-center mb-5" data-aos="fade-up">
-                <div class="badge-glow">
-                    <i class="fas fa-star me-2 text-warning"></i> Tính năng cốt lõi
+                <div class="badge-glow mb-3">
+                    <i class="fas fa-star me-2 text-warning"></i> Năng lực cốt lõi
                 </div>
-                <h2 class="fw-bold text-dark mb-3 display-6">GIẢI PHÁP & TÍNH NĂNG NỔI BẬT</h2>
-                <p class="text-muted mx-auto" style="max-width: 750px; font-size: 1.1rem;">
-                    Bộ công cụ số hóa & tự động hóa theo QĐ 3806 – 4725 – 3276, hỗ trợ tự đánh giá, đánh giá ngoài, tổng hợp và điều hành toàn ngành.
-                </p>
+                <h2 class="fw-bold text-dark mb-2">8 TRỤ CỘT CHIẾN LƯỢC</h2>
+                <p class="text-muted">Hệ sinh thái đồng bộ gắn liền với mục tiêu Chuyển đổi số Quốc gia</p>
             </div>
 
-            <div class="row g-4">
+            <div class="row align-items-center">
 
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                    <div class="feature-card-pro hover-blue">
-                        <div class="icon-wrapper-pro gradient-blue">
-                            <i class="fas fa-file-signature"></i>
+                <div class="col-lg-4">
+                    <div class="hub-item hub-left" data-aos="fade-right" data-aos-delay="0">
+                        <div class="hub-icon grad-1"><i class="fas fa-clipboard-check"></i></div>
+                        <div class="hub-content">
+                            <h5>Chuẩn hoá khung tiêu chí</h5>
+                            <p>Thiết lập bộ tiêu chí thống nhất, khoa học, làm căn cứ số hóa toàn diện.</p>
                         </div>
-                        <h5 class="feature-title-pro">Số hoá Bộ tiêu chí</h5>
-                        <p class="feature-desc-pro">
-                            Cập nhật đầy đủ theo 3 Quyết định. Tự động chấm điểm – phân loại mức đạt – tổng hợp kết quả.
-                        </p>
+                    </div>
+                    <div class="hub-item hub-left" data-aos="fade-right" data-aos-delay="100">
+                        <div class="hub-icon grad-2"><i class="fas fa-robot"></i></div>
+                        <div class="hub-content">
+                            <h5>Tự động hoá đánh giá</h5>
+                            <p>Chấm điểm, xếp loại tự động, giảm thiểu tối đa tác vụ thủ công.</p>
+                        </div>
+                    </div>
+                    <div class="hub-item hub-left" data-aos="fade-right" data-aos-delay="200">
+                        <div class="hub-icon grad-3"><i class="fas fa-chart-line"></i></div>
+                        <div class="hub-content">
+                            <h5>Phân tích dữ liệu lớn</h5>
+                            <p>Biến dữ liệu thô thành thông tin chiến lược, hỗ trợ dự báo chính xác.</p>
+                        </div>
+                    </div>
+                    <div class="hub-item hub-left" data-aos="fade-right" data-aos-delay="300">
+                        <div class="hub-icon grad-4"><i class="fas fa-file-invoice"></i></div>
+                        <div class="hub-content">
+                            <h5>Điều hành & Báo cáo</h5>
+                            <p>Hệ thống báo cáo động, trực quan, phục vụ chỉ đạo điều hành tức thời.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card-pro hover-green">
-                        <div class="icon-wrapper-pro gradient-green">
-                            <i class="fas fa-chart-pie"></i>
+                <div class="col-lg-4 d-none d-lg-block">
+                    <div class="center-core" data-aos="zoom-in">
+                        <div class="core-circle">
+                            <div class="core-orbit"></div>
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/global-network-5655592-4714658.png"
+                                 class="img-fluid floating-anim"
+                                 style="width: 280px; filter: drop-shadow(0 20px 40px rgba(0, 200, 255, 0.3));"
+                                 alt="Global Network">
                         </div>
-                        <h5 class="feature-title-pro">Dashboard thông minh</h5>
-                        <p class="feature-desc-pro">
-                            Biểu đồ đa chiều (Radar/Heatmap) theo năm học – cấp quản lý. So sánh – dự báo – hỗ trợ ra quyết định.
-                        </p>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card-pro hover-orange">
-                        <div class="icon-wrapper-pro gradient-orange">
-                            <i class="fas fa-print"></i>
+                <div class="col-lg-4">
+                    <div class="hub-item hub-right" data-aos="fade-left" data-aos-delay="0">
+                        <div class="hub-icon grad-5"><i class="fas fa-database"></i></div>
+                        <div class="hub-content">
+                            <h5>Quản trị minh chứng số</h5>
+                            <p>Kho lưu trữ tập trung, an toàn, dễ dàng truy xuất và tái sử dụng.</p>
                         </div>
-                        <h5 class="feature-title-pro">Báo cáo điều hành</h5>
-                        <p class="feature-desc-pro">
-                            Xuất báo cáo toàn ngành chỉ trong 1 cú nhấp. Tự động tạo bảng xếp hạng và báo cáo UBND.
-                        </p>
                     </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card-pro hover-cyan">
-                        <div class="icon-wrapper-pro gradient-cyan">
-                            <i class="fas fa-server"></i>
+                    <div class="hub-item hub-right" data-aos="fade-left" data-aos-delay="100">
+                        <div class="hub-icon grad-6"><i class="fas fa-eye"></i></div>
+                        <div class="hub-content">
+                            <h5>Giám sát thực thi</h5>
+                            <p>Theo dõi tiến độ triển khai CĐS tại từng đơn vị theo thời gian thực.</p>
                         </div>
-                        <h5 class="feature-title-pro">Kho minh chứng số</h5>
-                        <p class="feature-desc-pro">
-                            Lưu trữ tập trung – phân quyền đa cấp. Tìm kiếm nhanh, hỗ trợ thanh kiểm tra & đối chiếu.
-                        </p>
+                    </div>
+                    <div class="hub-item hub-right" data-aos="fade-left" data-aos-delay="200">
+                        <div class="hub-icon grad-7"><i class="fas fa-gavel"></i></div>
+                        <div class="hub-content">
+                            <h5>Thẩm định chuẩn hoá</h5>
+                            <p>Quy trình online minh bạch, khách quan, rút ngắn thời gian xét duyệt.</p>
+                        </div>
+                    </div>
+                    <div class="hub-item hub-right" data-aos="fade-left" data-aos-delay="300">
+                        <div class="hub-icon grad-8"><i class="fas fa-network-wired"></i></div>
+                        <div class="hub-content">
+                            <h5>Đồng bộ hệ sinh thái</h5>
+                            <p>Kết nối dữ liệu liền mạch với CSDL Quốc gia và của Bộ GDĐT.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -497,7 +441,7 @@
                                     <li><i class="fas fa-check-circle check-truong"></i> Lưu trữ minh chứng số hóa, dùng cho nhiều năm.</li>
                                     <li><i class="fas fa-check-circle check-truong"></i> Cảnh báo tiêu chí chưa đạt để cải thiện kịp thời.</li>
                                     <li><i class="fas fa-check-circle check-truong"></i> Giảm đáng kể hồ sơ giấy, dễ làm – dễ tra cứu.</li>
-                                    <li><i class="fas fa-check-circle check-truong"></i> Tự đánh giá đúng chuẩn theo QĐ 4725 / 3276.</li>
+                                    <li><i class="fas fa-check-circle check-truong"></i> Tự đánh giá đúng chuẩn theo QĐ 4725 /3276.</li>
                                 </ul>
                             </div>
                             <div class="col-lg-6 text-center">

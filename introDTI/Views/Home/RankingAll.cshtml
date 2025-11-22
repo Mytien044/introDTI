@@ -182,88 +182,131 @@
 
         <div class="ranking-card">
             <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead>
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="table-light">
                         <tr>
-                            <th class="text-center" width="60">Hạng</th>
+                            <th class="text-center" width="80">Hạng</th>
                             <th>Tên đơn vị</th>
-                            <th>Trực thuộc</th>
-                            <th class="text-center">Điểm tự chấm</th>
-                            <th class="text-center">Điểm thẩm định</th>
-                            <th class="text-center">Mức độ CĐS</th>
-                            <th class="text-center">Trạng thái</th>
-                            <th class="text-center">Thao tác</th>
+                            <th class="text-center" width="150">Điểm DTI</th>
+                            <th class="text-center" width="200">Mức độ CĐS</th>
+                            <th class="text-center" width="100">Chi tiết</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><div class="rank-badge rank-1">1</div></td>
-                            <td>
-                                <div class="fw-bold text-primary">Trường THPT Chuyên Thoại Ngọc Hầu</div>
-                                <small class="text-muted">TP. Long Xuyên</small>
+                            <td class="text-center">
+                                <div class="rank-badge rank-1 shadow-sm">1</div>
                             </td>
-                            <td>Sở GD&ĐT</td>
-                            <td class="text-center text-muted">995</td>
-                            <td class="text-center fw-bold fs-5 text-primary">990</td>
-                            <td class="text-center"><span class="badge bg-success">Mức độ 3</span></td>
-                            <td class="text-center"><span class="badge bg-success-soft rounded-pill"><span class="status-dot bg-success"></span>Đã công bố</span></td>
-                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                            <td>
+                                <div class="fw-bold text-primary mb-1">Trường THPT Chuyên Thoại Ngọc Hầu</div>
+                                <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> TP. Long Xuyên</small>
+                            </td>
+                            <td class="text-center">
+                                <span class="fw-bold fs-5 text-dark">990</span>
+                                <small class="d-block text-muted" style="font-size: 0.75rem;"></small>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-success-soft rounded-pill px-3 py-2 text-success border border-success border-opacity-25">
+                                    <i class="fas fa-check-circle me-1"></i> Mức độ 3
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-light text-primary hover-shadow" title="Xem chi tiết">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
 
                         <tr>
-                            <td><div class="rank-badge rank-2">2</div></td>
-                            <td>
-                                <div class="fw-bold text-dark">Trường THPT Long Xuyên</div>
-                                <small class="text-muted">TP. Long Xuyên</small>
+                            <td class="text-center">
+                                <div class="rank-badge rank-2 shadow-sm">2</div>
                             </td>
-                            <td>Sở GD&ĐT</td>
-                            <td class="text-center text-muted">970</td>
-                            <td class="text-center fw-bold fs-5 text-primary">965</td>
-                            <td class="text-center"><span class="badge bg-success">Mức độ 3</span></td>
-                            <td class="text-center"><span class="badge bg-success-soft rounded-pill"><span class="status-dot bg-success"></span>Đã công bố</span></td>
-                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                            <td>
+                                <div class="fw-bold text-dark mb-1">Trường THPT Long Xuyên</div>
+                                <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> TP. Long Xuyên</small>
+                            </td>
+                            <td class="text-center">
+                                <span class="fw-bold fs-5 text-dark">965</span>
+                                <small class="d-block text-muted" style="font-size: 0.75rem;"></small>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-success-soft rounded-pill px-3 py-2 text-success border border-success border-opacity-25">
+                                    <i class="fas fa-check-circle me-1"></i> Mức độ 3
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-light text-primary hover-shadow">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
 
                         <tr>
-                            <td><div class="rank-badge rank-3">3</div></td>
-                            <td>
-                                <div class="fw-bold text-dark">Trường THPT Châu Văn Liêm</div>
-                                <small class="text-muted">Huyện Chợ Mới</small>
+                            <td class="text-center">
+                                <div class="rank-badge rank-3 shadow-sm">3</div>
                             </td>
-                            <td>Sở GD&ĐT</td>
-                            <td class="text-center text-muted">950</td>
-                            <td class="text-center fw-bold fs-5 text-primary">940</td>
-                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
-                            <td class="text-center"><span class="badge bg-success-soft rounded-pill"><span class="status-dot bg-success"></span>Đã công bố</span></td>
-                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                            <td>
+                                <div class="fw-bold text-dark mb-1">Trường THPT Châu Văn Liêm</div>
+                                <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Huyện Chợ Mới</small>
+                            </td>
+                            <td class="text-center">
+                                <span class="fw-bold fs-5 text-dark">940</span>
+                                <small class="d-block text-muted" style="font-size: 0.75rem;"></small>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-primary-soft rounded-pill px-3 py-2 text-primary border border-primary border-opacity-25">
+                                    <i class="fas fa-star-half-alt me-1"></i> Mức độ 2
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-light text-primary hover-shadow">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
 
                         <tr>
-                            <td><div class="rank-badge">4</div></td>
+                            <td class="text-center fw-bold text-secondary fs-5">4</td>
                             <td>
-                                <div class="fw-bold text-dark">Trường THCS Nguyễn Trãi</div>
-                                <small class="text-muted">TP. Châu Đốc</small>
+                                <div class="fw-bold text-dark mb-1">Trường THCS Nguyễn Trãi</div>
+                                <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> TP. Châu Đốc</small>
                             </td>
-                            <td>Phòng GD Châu Đốc</td>
-                            <td class="text-center text-muted">920</td>
-                            <td class="text-center fw-bold fs-5 text-primary">910</td>
-                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
-                            <td class="text-center"><span class="badge bg-primary-soft rounded-pill"><span class="status-dot bg-primary"></span>Đã duyệt</span></td>
-                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                            <td class="text-center">
+                                <span class="fw-bold fs-5 text-dark">910</span>
+                                <small class="d-block text-muted" style="font-size: 0.75rem;"></small>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-primary-soft rounded-pill px-3 py-2 text-primary border border-primary border-opacity-25">
+                                    <i class="fas fa-star-half-alt me-1"></i> Mức độ 2
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-light text-primary hover-shadow">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
 
                         <tr>
-                            <td><div class="rank-badge">5</div></td>
+                            <td class="text-center fw-bold text-secondary fs-5">5</td>
                             <td>
-                                <div class="fw-bold text-dark">Trường Tiểu học Lê Quý Đôn</div>
-                                <small class="text-muted">TP. Long Xuyên</small>
+                                <div class="fw-bold text-dark mb-1">Trường Tiểu học Lê Quý Đôn</div>
+                                <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> TP. Long Xuyên</small>
                             </td>
-                            <td>Phòng GD Long Xuyên</td>
-                            <td class="text-center text-muted">900</td>
-                            <td class="text-center fw-bold fs-5 text-primary">890</td>
-                            <td class="text-center"><span class="badge bg-primary">Mức độ 2</span></td>
-                            <td class="text-center"><span class="badge bg-primary-soft rounded-pill"><span class="status-dot bg-primary"></span>Đã duyệt</span></td>
-                            <td class="text-center"><a href="#" class="btn btn-sm btn-light text-primary"><i class="fas fa-eye"></i></a></td>
+                            <td class="text-center">
+                                <span class="fw-bold fs-5 text-dark">890</span>
+                                <small class="d-block text-muted" style="font-size: 0.75rem;"></small>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-warning-soft rounded-pill px-3 py-2 text-warning-dark border border-warning border-opacity-25" style="background-color: #fffbeb; color: #92400e;">
+                                    <i class="fas fa-exclamation-circle me-1"></i> Mức độ 1
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-light text-primary hover-shadow">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

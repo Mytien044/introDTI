@@ -1,4 +1,4 @@
-﻿/* File: wwwroot/css/landing.css - FINAL FIXED & OPTIMIZED */
+﻿/* File: wwwroot/css/landing.css - FINAL FIXED & CLEAN */
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -83,16 +83,16 @@ body {
 
 /* --- 2. HERO SECTION --- */
 .hero-section {
-    background: linear-gradient(rgba(0, 15, 30, 0.75), rgba(0, 15, 30, 0.75)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+    /* Thay đổi chính ở đây: Dùng radial-gradient */
+    background: radial-gradient(circle at center, rgba(0, 50, 120, 0.5) 0%, rgba(2, 15, 38, 0.95) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    background-blend-mode: overlay;
-    padding: 160px 0 120px;
-    position: relative;
+    background-attachment: fixed; /* Hiệu ứng parallax khi cuộn chuột nhìn rất xịn */
     color: #fff;
-    text-align: center;
+    padding: 120px 0; /* Tăng padding chút cho thoáng */
+    position: relative;
+    overflow: hidden;
 }
-
     .hero-section::after {
         content: '';
         position: absolute;
@@ -116,7 +116,6 @@ body {
     margin-right: auto;
 }
 
-/* Glassmorphism Hero Description */
 .hero-desc {
     font-size: 1.1rem;
     font-weight: 400;
@@ -270,11 +269,34 @@ body {
     color: #fff;
 }
 
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.bg-success-soft {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.bg-primary-soft {
+    background-color: #e0f2fe;
+    color: #075985;
+}
+
+.bg-warning-soft {
+    background-color: #fffbeb;
+    color: #92400e;
+}
+
 /* --- 4. LEGAL CARDS --- */
 .legal-card {
     border: none;
     border-radius: 16px;
-    padding: 30px;
+    padding: 30px 15px;
     height: 100%;
     transition: all 0.4s ease;
     border-top: 4px solid transparent;
@@ -282,7 +304,29 @@ body {
     overflow: hidden;
     background: #fff;
     box-shadow: var(--soft-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
+
+    .legal-card p.small.mb-4 {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .legal-card .btn {
+        width: auto;
+        min-width: 180px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 15px;
+    }
 
     .legal-card:hover {
         transform: translateY(-10px);
@@ -330,293 +374,405 @@ body {
     transform: scale(1.1);
 }
 
-/* --- 5. PROCESS SECTION (PASTEL COLORS) --- */
+/* --- 5. PROCESS SECTION --- */
 .process-section {
     background-color: #fff;
-    padding: 60px 0;
+    padding: 80px 0;
+    position: relative;
 }
 
 .timeline-line-horizontal {
-    position: absolute;
-    top: 50px;
-    left: 10%;
-    width: 80%;
-    height: 3px;
-    background: #e9ecef;
-    z-index: 0;
+    display: none;
 }
-
-.process-card {
-    border-radius: 16px;
-    padding: 30px 20px;
-    height: 100%;
-    border: 1px solid rgba(0,0,0,0.03);
-    box-shadow: var(--soft-shadow);
-    transition: all 0.3s ease;
+/* Bỏ style cũ */
+.timeline-row {
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    z-index: 1;
-    background: #fff; /* Fallback */
+    margin-top: 50px;
 }
 
-    .process-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--hover-shadow);
+    .timeline-row::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        right: 50px;
+        height: 4px;
+        background: #e9ecef;
+        z-index: 0;
+        border-radius: 10px;
     }
 
-/* Pastel Colors */
-.bg-step-blue {
-    background-color: var(--pastel-blue);
-    border-color: #cce5ff;
+.timeline-step {
+    position: relative;
+    z-index: 1;
+    width: 23%;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.bg-step-yellow {
-    background-color: var(--pastel-yellow);
-    border-color: #ffeeba;
-}
-
-.bg-step-green {
-    background-color: var(--pastel-green);
-    border-color: #d4edda;
-}
-
-.bg-step-purple {
-    background-color: var(--pastel-purple);
-    border-color: #e0c8ff;
-}
-
-.text-step-blue {
-    color: var(--text-blue-dark);
-}
-
-.text-step-yellow {
-    color: var(--text-yellow-dark);
-}
-
-.text-step-green {
-    color: var(--text-green-dark);
-}
-
-.text-step-purple {
-    color: var(--text-purple-dark);
-}
-
-.process-icon-box {
-    width: 70px;
-    height: 70px;
+.step-marker {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
     background: #fff;
+    border: 4px solid #e9ecef;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    font-size: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.step-number-large {
+.step-icon {
+    font-size: 1.8rem;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.step-badge-num {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2.5rem;
-    font-weight: 900;
-    opacity: 0.15;
-}
-
-.step-actor {
+    top: -5px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    background: #6c757d;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
     font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
 }
 
-.step-title {
+.step-content {
+    padding: 0 10px;
+}
+
+.step-name {
     font-weight: 800;
     font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     color: #2c3e50;
+    text-transform: uppercase;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.step-desc-list {
+.step-actor-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #f1f3f5;
+    color: #64748b;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.step-details {
     text-align: left;
-    padding-left: 0;
     list-style: none;
-    margin-bottom: 0;
+    padding: 15px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+    background: #f8faff;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: 0.3s;
 }
 
-    .step-desc-list li {
+    .step-details li {
         position: relative;
         padding-left: 15px;
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-        color: #555;
-        line-height: 1.5;
+        margin-bottom: 6px;
+        line-height: 1.4;
     }
 
-        .step-desc-list li::before {
+        .step-details li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: var(--primary-blue);
+            color: #cbd5e1;
             font-weight: bold;
         }
 
-/* Màu dấu chấm theo theme */
-.bg-step-blue .step-desc-list li::before {
-    color: var(--text-blue-dark);
+/* Hover Steps */
+.timeline-step:hover {
+    transform: translateY(-5px);
+}
+/* Step Colors */
+.step-blue .step-marker {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 5px rgba(0, 86, 179, 0.1);
 }
 
-.bg-step-yellow .step-desc-list li::before {
-    color: var(--text-yellow-dark);
+.step-blue .step-icon, .step-blue .step-actor-label {
+    color: var(--primary-blue);
 }
 
-.bg-step-green .step-desc-list li::before {
-    color: var(--text-green-dark);
+.step-blue .step-badge-num {
+    background: var(--primary-blue);
 }
 
-.bg-step-purple .step-desc-list li::before {
-    color: var(--text-purple-dark);
+.step-blue:hover .step-details {
+    background: #eef7ff;
+    border-color: #cfe2ff;
 }
 
-/* --- FEATURE SECTION PRO (PHIÊN BẢN XỊN XÒ) --- */
-.feature-section-pro {
-    background-color: #f8faff; /* Nền hơi xanh rất nhẹ để làm nổi card trắng */
+.step-yellow .step-marker {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 5px rgba(255, 193, 7, 0.1);
+}
+
+.step-yellow .step-icon, .step-yellow .step-actor-label {
+    color: #b48900;
+}
+
+.step-yellow .step-badge-num {
+    background: var(--accent-gold);
+    color: #000;
+}
+
+.step-yellow:hover .step-details {
+    background: #fffced;
+    border-color: #fff3cd;
+}
+
+.step-green .step-marker {
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 0 5px rgba(32, 201, 151, 0.1);
+}
+
+.step-green .step-icon, .step-green .step-actor-label {
+    color: var(--accent-teal);
+}
+
+.step-green .step-badge-num {
+    background: var(--accent-teal);
+}
+
+.step-green:hover .step-details {
+    background: #f0fdf4;
+    border-color: #d1e7dd;
+}
+
+.step-purple .step-marker {
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 5px rgba(111, 66, 193, 0.1);
+}
+
+.step-purple .step-icon, .step-purple .step-actor-label {
+    color: #6f42c1;
+}
+
+.step-purple .step-badge-num {
+    background: #6f42c1;
+}
+
+.step-purple:hover .step-details {
+    background: #f8f4ff;
+    border-color: #e0cffc;
+}
+
+/* --- STRATEGY SECTION: CENTRAL HUB STYLE --- */
+.strategy-section {
+    background-color: #fff;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
 }
 
-    /* Trang trí nền mờ (Background blob) */
-    .feature-section-pro::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 80% 10%, rgba(0, 102, 204, 0.03) 0%, transparent 50%), radial-gradient(circle at 20% 90%, rgba(13, 202, 240, 0.03) 0%, transparent 50%);
-        pointer-events: none;
-    }
+/* Hình nền mờ trang trí phía sau */
+.strategy-bg-deco {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(232, 241, 255, 0.8) 0%, rgba(255,255,255,0) 70%);
+    z-index: 0;
+    border-radius: 50%;
+}
 
-.feature-card-pro {
-    background: #fff;
-    border-radius: 24px; /* Bo góc lớn hiện đại */
-    padding: 40px 15px;
-    height: 100%;
-    border: 1px solid rgba(0,0,0,0.04);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04); /* Bóng mờ tinh tế */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy nhẹ */
-    position: relative;
-    z-index: 1;
+.hub-item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
 }
 
-    /* HIỆU ỨNG HOVER "GLOW" */
-    .feature-card-pro:hover {
-        transform: translateY(-15px);
+/* Bên trái: Căn lề phải, Icon nằm bên phải */
+.hub-left {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+    .hub-left .hub-icon {
+        order: 2;
+        margin-left: 20px;
+        margin-right: 0;
     }
 
-/* Màu shadow riêng cho từng loại khi hover */
-.hover-blue:hover {
-    box-shadow: 0 20px 40px rgba(0, 86, 179, 0.15);
-    border-color: rgba(0, 86, 179, 0.2);
+    .hub-left .hub-content {
+        order: 1;
+    }
+
+/* Bên phải: Căn lề trái, Icon nằm bên trái */
+.hub-right {
+    justify-content: flex-start;
+    text-align: left;
 }
 
-.hover-green:hover {
-    box-shadow: 0 20px 40px rgba(32, 201, 151, 0.15);
-    border-color: rgba(32, 201, 151, 0.2);
-}
+    .hub-right .hub-icon {
+        margin-right: 20px;
+    }
 
-.hover-orange:hover {
-    box-shadow: 0 20px 40px rgba(253, 126, 20, 0.15);
-    border-color: rgba(253, 126, 20, 0.2);
-}
-
-.hover-cyan:hover {
-    box-shadow: 0 20px 40px rgba(13, 202, 240, 0.15);
-    border-color: rgba(13, 202, 240, 0.2);
-}
-
-/* ICON GRADIENT (Điểm nhấn chính) */
-.icon-wrapper-pro {
-    width: 90px;
-    height: 90px;
-    border-radius: 24px; /* Hình dáng Squircle giống icon iOS */
+/* Icon Style */
+.hub-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     color: #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: all 0.4s ease;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.feature-card-pro:hover .icon-wrapper-pro {
-    transform: scale(1.1) rotate(5deg); /* Icon phóng to và xoay nhẹ khi hover */
+/* Hiệu ứng Hover */
+.hub-item:hover .hub-icon {
+    transform: scale(1.1);
 }
 
-/* Màu Gradient cho Icon */
-.gradient-blue {
-    background: linear-gradient(135deg, #0056b3 0%, #00a8ff 100%);
-    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
-}
-
-.gradient-green {
-    background: linear-gradient(135deg, #198754 0%, #20c997 100%);
-    box-shadow: 0 10px 20px rgba(25, 135, 84, 0.3);
-}
-
-.gradient-orange {
-    background: linear-gradient(135deg, #fd7e14 0%, #ffc107 100%);
-    box-shadow: 0 10px 20px rgba(253, 126, 20, 0.3);
-}
-
-.gradient-cyan {
-    background: linear-gradient(135deg, #0dcaf0 0%, #00f2fe 100%);
-    box-shadow: 0 10px 20px rgba(13, 202, 240, 0.3);
+.hub-item:hover h5 {
+    color: var(--primary-blue);
 }
 
 /* Typography */
-.feature-title-pro {
-    font-size: 1.15rem; 
-    font-weight: 800;
-    margin-bottom: 15px;
-    color: #1e293b;
-    /* --- CODE ĐỂ KHÔNG NHẢY HÀNG --- */
-    white-space: nowrap; /* Bắt buộc không xuống dòng */
-    overflow: hidden; /* Nếu dài quá khổ thì ẩn bớt */
-    text-overflow: ellipsis; /* Thêm dấu ... nếu chữ quá dài */
-    width: 100%; /* Chiếm hết chiều rộng */
-    display: block;
-}
-.feature-desc-pro {
-    font-size: 0.95rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin-bottom: 0;
-}
-
-/* Header Badge xịn hơn */
-.badge-glow {
-    background: rgba(0, 86, 179, 0.1);
-    color: var(--primary-blue);
-    padding: 10px 20px;
-    border-radius: 50px;
+.hub-content h5 {
+    font-size: 1.1rem;
     font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 1px solid rgba(0, 86, 179, 0.1);
+    color: #2c3e50;
+    margin-bottom: 5px;
+    transition: color 0.3s;
 }
 
-/* --- 7. USER BENEFITS (FIXED LAYOUT - NO WHITE WRAPPER) --- */
+.hub-content p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Hình ảnh trung tâm (Center Core) */
+.center-core {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.core-circle {
+    width: 350px;
+    height: 350px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 60px rgba(0, 102, 204, 0.1);
+    border: 1px solid rgba(0, 102, 204, 0.1);
+    position: relative;
+}
+/* Vòng tròn xoay nhẹ */
+.core-orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgba(0, 102, 204, 0.2);
+    border-radius: 50%;
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Các màu Gradient cho Icon (Giữ nguyên như cũ) */
+.grad-1 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.grad-2 {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.grad-3 {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.grad-4 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.grad-5 {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);
+}
+
+.grad-6 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.grad-7 {
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.grad-8 {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .center-core {
+        display: none;
+    }
+    /* Ẩn hình giữa trên mobile */
+    .hub-left {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+        .hub-left .hub-icon {
+            order: 0;
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+    .strategy-section {
+        padding: 50px 0;
+    }
+}
+/* --- 7. USER BENEFITS (FIXED TABS) --- */
 .role-tabs-pro {
     display: flex;
     justify-content: center;
@@ -657,7 +813,6 @@ body {
             color: var(--primary-blue);
         }
 
-        /* Active State - Màu sắc riêng */
         .role-tabs-pro .nav-link.active#tab-so-phong {
             background: var(--primary-blue);
             color: #fff;
@@ -780,12 +935,40 @@ footer {
         font-size: 2rem;
     }
 
-    .timeline-line-horizontal {
-        display: none;
+    .timeline-row {
+        flex-direction: column;
+        margin-top: 0;
     }
-    /* Đã fix class */
-    .timeline-line {
-        display: none;
+
+        .timeline-row::before {
+            top: 0;
+            bottom: 0;
+            left: 40px;
+            width: 4px;
+            height: auto;
+        }
+
+    .timeline-step {
+        width: 100%;
+        display: flex;
+        text-align: left;
+        margin-bottom: 30px;
+        align-items: flex-start;
+    }
+
+    .step-marker {
+        margin: 0 20px 0 0;
+        flex-shrink: 0;
+    }
+
+    .step-content {
+        padding: 0;
+    }
+
+    .step-badge-num {
+        right: auto;
+        left: -5px;
+        top: -5px;
     }
 
     .role-tabs-pro .nav-pills {
@@ -800,9 +983,5 @@ footer {
 
     .ranking-section {
         margin-top: 30px;
-    }
-
-    .process-card {
-        margin-bottom: 20px;
     }
 }
